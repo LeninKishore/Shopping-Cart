@@ -1,0 +1,232 @@
+/* General body settings */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../cart/image/unplash.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Relative path to the image */
+    /* color: #e1dcdc; */
+}
+
+/* Container settings */
+.container {
+    width: 900px;
+    margin: auto;
+    max-width: 90vw;
+    text-align: center;
+    /* background-color: #FFFFFF;  */
+    color: #0c0b0b;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: transform .5s;
+}
+
+/* SVG styling */
+svg {
+    width: 30px;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    background-color:rgb(224, 219, 219);
+    box-shadow: 0 4px 10px rgba(46, 44, 44, 0.1);
+}
+
+/* Footer Styles */
+/* .footer-content{
+    display: flex;
+    padding: 15px;
+    background-color: #eee;
+}
+
+.first{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 150px;
+}
+
+.second{
+    display: flex;
+    flex: 1;
+    justify-content: end;
+    align-items: end;
+} */
+
+
+
+
+/* Cart icon styling */
+.icon-cart {
+    position: relative;
+}
+
+.icon-cart span {
+    position: absolute;
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: -10px;
+    right: -10px;
+    font-size: 14px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #353432;
+}
+
+/* Product grid styling */
+.listProduct {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.listProduct .item {
+    background-color:rgb(224, 219, 219);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listProduct .item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.listProduct .item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.1));
+}
+
+.listProduct .item h2 {
+    font-weight: 500;
+    font-size: 20px;
+    color: #353432;
+}
+
+.listProduct .item .price {
+    letter-spacing: 1px;
+    font-size: 16px;
+    color: #E8BC0E;
+}
+
+.listProduct .item button {
+    background-color: #353432;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.listProduct .item button:hover {
+    background-color: #555;
+}
+
+/* Cart Tab styling */
+.cartTab {
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: right 0.5s ease;
+}
+
+body.showCart .cartTab {
+    right: 0;
+}
+
+body.showCart .container {
+    transform: translateX(-250px);
+}
+
+/* Cart header */
+.cartTab h1 {
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Buttons */
+.cartTab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab button {
+    background-color: #E8BC0E;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cartTab .close {
+    background-color: #ffffff;
+    border-color: #333;
+}
+
+/* Cart items styling */
+.listCart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.listCart .item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Scroll styling */
+.listCart {
+    overflow-y: auto;
+}
+
+.listCart::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Media queries for responsive grid */
+@media only screen and (max-width: 992px) {
+    .listProduct {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .listProduct {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .listProduct {
+        grid-template-columns: 1fr;
+    }
+}
